@@ -17,7 +17,6 @@ from app.events.models import Event, EventStatus, event_organizers
 from app.events.schemas import AddOrganizerRequest, EventCreate, EventUpdate
 from app.users.models import User, UserRole
 
-# Valid status transitions
 STATUS_TRANSITIONS = {
     EventStatus.DRAFT: [EventStatus.UPCOMING, EventStatus.CANCELLED],
     EventStatus.UPCOMING: [EventStatus.ONGOING, EventStatus.CANCELLED],
@@ -92,7 +91,7 @@ async def update_event(
         validate_status_transition(event.status, event_data.status)
 
     if event.status in [EventStatus.COMPLETED, EventStatus.CANCELLED]:
-        # Only allow updating is_archived
+
         updated_fields = event_data.model_dump(exclude_unset=True).keys()
         if any(field != "is_archived" for field in updated_fields):
             raise EventStatusException(

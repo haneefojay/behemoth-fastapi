@@ -2,7 +2,6 @@ from fastapi import APIRouter
 
 from app.common.schemas import ResponseSchema
 
-# Globals
 router = APIRouter()
 
 

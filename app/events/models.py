@@ -31,7 +31,6 @@ class EventStatus(str, enum.Enum):
     CANCELLED = "cancelled"
 
 
-# Association table for many-to-many relationship between events and organizers
 event_organizers = Table(
     "event_organizers",
     DBBase.metadata,

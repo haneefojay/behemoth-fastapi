@@ -33,7 +33,6 @@ class User(DBBase):
         DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False
     )
 
-    # Relationships
     created_events = relationship(
         "Event", back_populates="created_by", foreign_keys="Event.created_by_id"
     )
@@ -62,7 +61,6 @@ class RefreshToken(DBBase):
     is_revoked = Column(Boolean, default=False, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 
-    # Relationships
     user = relationship("User", back_populates="refresh_tokens")
 
     def __repr__(self):

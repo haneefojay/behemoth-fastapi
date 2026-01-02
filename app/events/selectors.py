@@ -87,7 +87,7 @@ async def get_events(
         conditions.append(Event.is_archived == False)
 
     if search_query:
-        # Senior Tip: Using TSVECTOR for performance and scalability
+
         query = query.where(Event.search_vector.match(search_query))
 
     if conditions:

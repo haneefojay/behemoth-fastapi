@@ -36,7 +36,7 @@ async def update_current_user_profile(
     session: AsyncSession = Depends(get_session),
 ):
     """Update current user profile"""
-    # Update user fields
+
     if user_data.full_name is not None:
         current_user.full_name = user_data.full_name
     if user_data.email is not None:

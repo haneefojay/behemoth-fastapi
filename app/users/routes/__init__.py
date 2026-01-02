@@ -7,6 +7,5 @@ from app.users.routes.users import router as users_router
 
 router = APIRouter()
 
-# Include sub-routers
 router.include_router(auth_router, prefix="/auth", tags=["Authentication"])
 router.include_router(users_router, prefix="/users", tags=["Users"])

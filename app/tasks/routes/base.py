@@ -59,7 +59,7 @@ async def list_event_tasks(
     session: AsyncSession = Depends(get_session),
 ):
     """List all tasks for an event"""
-    # Check if event exists
+
     event = await get_event_by_id(session, event_id)
     if not event:
         raise EventNotFoundException(event_id)
