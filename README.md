@@ -225,7 +225,7 @@ curl -X POST http://localhost:8000/events/{event_id}/register \
 
 | Endpoint | User | Organizer | Admin |
 |----------|------|-----------|-------|
-| Create Event | ❌ | ✅ | ✅ |
+| Create Event | ✅ | ✅ | ✅ |
 | Update Own Event | ✅ | ✅ | ✅ |
 | Update Any Event | ❌ | ❌ | ✅ |
 | Delete Own Event | ✅ | ✅ | ✅ |
